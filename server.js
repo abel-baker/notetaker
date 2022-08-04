@@ -32,7 +32,6 @@ function findById(id, array) {
   return result;
 }
 function writeNote(body, array) {
-  const { title, content } = body;
   array.push(body);
 
   fs.writeFileSync(
@@ -41,6 +40,17 @@ function writeNote(body, array) {
   );
 
   return body;
+}
+function deleteNote(id, array) {
+  const filtered = array.filter(item => item.id != id);
+  console.log(filtered, id);
+
+  fs.writeFileSync(
+    path.join(__dirname, './db/db.json'),
+    JSON.stringify(filtered, null, 2)
+  );
+
+  return filtered;
 }
 
 // Public routes
@@ -73,11 +83,20 @@ app.get("/api/notes/:id", (req, res) => {
 app.post('/api/notes/', (req, res) => {
   const notes = getNotes();
   const note = req.body;
-  note.id = notes.length;
+  note.id = notes.length + 1;
 
   writeNote(note, notes);
 
   res.json(note);
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+  const notes = getNotes();
+  const noteId = req.params.id;
+
+  const filtered = deleteNote(noteId, notes);
+
+  res.json(filtered);
 });
 
 

@@ -1,42 +1,22 @@
 [
   {
-    "id": 0,
-    "title": "Test Title",
-    "text": "Test text"
+    "title": "Welcome",
+    "text": "Let's hope it works this time.",
+    "id": 1
   },
   {
-    "id": 1,
-    "title": "Test Title",
-    "text": "Test text"
+    "title": "Delete button doesn't work",
+    "text": "I disabled rendering the delete button because I couldn't get the delete function to work.",
+    "id": 3
   },
   {
-    "id": 2,
-    "title": "Test Title",
-    "text": "Test text"
+    "title": "Something about the fs write maybe",
+    "text": "The fs write seems to work, but the note list doesn't re-render, and the old array just gets written to the db again apparently.",
+    "id": 4
   },
   {
-    "id": 3,
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "id": 4,
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "id": 5,
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "id": 6,
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "title": "aA note itile",
-    "text": "Yes save me",
-    "id": 7
+    "title": "Frustrating but oh well",
+    "text": "It would have been nice to figure out, but it's just bonus points",
+    "id": 5
   }
 ]
